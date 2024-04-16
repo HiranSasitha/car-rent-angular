@@ -1,1 +1,38 @@
-<p>content works!</p>
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer [opened]="opened" mode="side">
+      <mat-list>
+          <mat-list-item [routerLinkActive]="['active']" >
+            <mat-icon color="primary" >directions_car</mat-icon>
+        <a class="aa" style="cursor: pointer" routerLink="/cars">car</a>
+          </mat-list-item>
+  
+        <mat-list-item [routerLinkActive]="['active']" >
+          <mat-icon color="primary" >sell</mat-icon>
+          <a class="aa" style="cursor: pointer">Fuel-Type</a>
+        </mat-list-item>
+  
+        <mat-list-item [routerLinkActive]="['active']" >
+          <mat-icon color="primary" >store</mat-icon>
+          <a class="aa" style="cursor: pointer">Reservation</a>
+        </mat-list-item>
+  
+        <mat-list-item [routerLinkActive]="['active']" >
+          <mat-icon color="primary" >spa</mat-icon>
+          <a class="aa" style="cursor: pointer">Report</a>
+        </mat-list-item>
+      </mat-list>
+  
+    </mat-drawer>
+  
+    <mat-drawer-content>
+      <div class="content">
+        <router-outlet></router-outlet>
+  
+      </div>
+    </mat-drawer-content>
+  
+  
+  
+  </mat-drawer-container>
+  
+  
