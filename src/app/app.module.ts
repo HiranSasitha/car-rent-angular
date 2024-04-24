@@ -18,6 +18,11 @@ import { UserComponent } from './component/user/user.component';
 import { LoginComponent } from './component/login/login.component';
 import { ForbiddenComponent } from './component/forbidden/forbidden.component';
 import { CarComponent } from './component/car/car.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
+
 
 @NgModule({
   declarations: [
@@ -30,6 +35,7 @@ import { CarComponent } from './component/car/car.component';
     LoginComponent,
     ForbiddenComponent,
     CarComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,11 @@ import { CarComponent } from './component/car/car.component';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
