@@ -24,7 +24,7 @@ requestHeaders = new HttpHeaders(
 
   public roleEquel(allowRoles:any):boolean{
     let isMatch = false;
-    const userRoles:any[] = this.userAuth.getRoles();
+    const userRoles:any[] = this.userAuth.getRoles();                   
 
     if (userRoles) {
         for (let i = 0; i < userRoles.length; i++) {

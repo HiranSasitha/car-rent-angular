@@ -19,8 +19,10 @@ import { LoginComponent } from './component/login/login.component';
 import { ForbiddenComponent } from './component/forbidden/forbidden.component';
 import { CarComponent } from './component/car/car.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from './component/auth/auth.guard';
+import { AuthInterceptor } from './component/auth/auth.interceptor';
 
 
 
@@ -51,7 +53,14 @@ import { RouterModule } from '@angular/router';
     RouterModule
     
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:AuthInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

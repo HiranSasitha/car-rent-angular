@@ -6,12 +6,13 @@ import { AdminComponent } from './component/admin/admin.component';
 import { UserComponent } from './component/user/user.component';
 import { LoginComponent } from './component/login/login.component';
 import { ForbiddenComponent } from './component/forbidden/forbidden.component';
+import { AuthGuard } from './component/auth/auth.guard';
 
 const routes: Routes = [
   {path:"car",component:CarComponent},
   {path:"home",component:HomeComponent},
-  {path:"admin",component:AdminComponent},
-  {path:"user",component:UserComponent},
+  {path:"admin",component:AdminComponent,canActivate:[AuthGuard],data:{roles:['ROLE_ADMIN']}},
+  {path:"user",component:UserComponent,canActivate:[AuthGuard],data:{roles:['ROLE_USER']}},
   {path:"login",component:LoginComponent},
   {path:"forbidden",component:ForbiddenComponent}
 ];
