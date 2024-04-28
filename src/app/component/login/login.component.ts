@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Route, Router } from '@angular/router';
+import { UserAuthService } from 'src/app/service/user-auth.service';
 import { UserService } from 'src/app/service/user.service';
 
 @Component({
@@ -9,7 +11,7 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private userService:UserService){
+  constructor(private userService:UserService, private userAuthService:UserAuthService,private router:Router){
 
   }
   ngOnInit(): void {
@@ -17,12 +19,20 @@ export class LoginComponent implements OnInit {
   }
 
   login(loginForm:NgForm):void{
-      console.log("form is sumbited");
-      console.log(loginForm.value);
+     
       this.userService.login(loginForm.value).subscribe(
-        (response)=>{
-          console.log(response);
-          
+        (response:any)=>{
+          console.log(response.jwtToken);
+          console.log(response.user.roles);
+          this.userAuthService.setRoles(response.user.roles);
+          this.userAuthService.setToken(response.jwtToken);
+          const role = response.user.roles[0].roleName;
+          console.log(role);
+          if(role==="ROLE_ADMIN"){
+            this.router.navigate(["/admin"])
+          }else{
+            this.router.navigate(["/user"])
+          }
         },(error)=>{
           console.log(error);
         }

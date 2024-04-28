@@ -24,15 +24,15 @@
           <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page"routerLink="/admin">Admin Dashboard</a>
+          <a class="nav-link active" aria-current="page"routerLink="/admin" *ngIf="userService.roleEquel(['ROLE_ADMIN'])">Admin Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/user">User Dashboard</a>
+          <a class="nav-link active" aria-current="page" routerLink="/user" *ngIf="userService.roleEquel(['ROLE_USER'])">User Dashboard</a>
         </li>
        
       </ul>
-      <button type="button" class="btn btn-success me-3" routerLink="/login">Login</button>
-      <button type="button" class="btn btn-danger">Log Out</button>
+      <button *ngIf="!isLogin()" type="button" class="btn btn-success me-3" routerLink="/login">Login</button>
+      <button *ngIf="isLogin()" (click)="logOut()" type="button" class="btn btn-danger">Log Out</button>
 
     </div>
   </div>
