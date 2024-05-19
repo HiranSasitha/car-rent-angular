@@ -1,0 +1,32 @@
+<div class="container mb-5">
+
+    <div class="card" style="padding: 25px;">
+<h1 class="font-weight-bold">Add New Customer</h1>
+<form #loginForm="ngForm" class="text-center" style="width: 600px;"  (ngSubmit)="saveCustomer(loginForm)">
+
+    <input type="text"
+    ngModel
+    name="name"
+    id="name"
+    placeholder="Customer Name"
+    class="form-control mb-3"
+    >
+    <input type="text"
+    ngModel
+    name="address"
+    id="address"
+    placeholder="Address"
+    class="form-control mb-4"
+    >
+
+    <input
+    type="submit"
+    value="Add Customer"
+    class="btn btn-outline-primary form-control rounded-2"
+    />
+    
+
+</form>
+    </div>
+
+</div>

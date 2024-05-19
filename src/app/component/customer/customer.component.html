@@ -1,0 +1,30 @@
+
+<div class="container mb-5">
+    <div class="card text-center" style="padding: 20px; color:green;">
+        <h1 class="font-weight-bold">Manage Customer</h1>
+    </div>
+</div>
+
+<table class="custom-table table table-success table-striped  mb-5 ">
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>address</th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+      
+            <tr *ngFor="let customer of customers">
+                <td>{{customer.name}}</td>
+                <td>{{customer.address}}</td>
+                <td >
+                   <a class="btn btn-primary" routerLink="/details/{{customer.id}}">Details</a>
+                </td>
+            </tr>
+    </tbody>
+</table>
+
+<a class="btn btn-outline-primary" routerLink="/add-new-customer">Add New Customer</a>
+

@@ -13,7 +13,7 @@ requestHeaders = new HttpHeaders(
   constructor(private httpClient:HttpClient,private userAuth:UserAuthService) { }
 
   public login(loginData:any){
-    console.log("hiran"+loginData.value);
+    
 
     return this.httpClient.post(this.BASE_URL+"/authenticate",loginData,{headers:this.requestHeaders});
     // const headers = new HttpHeaders().set('Content-Type', 'application/json');

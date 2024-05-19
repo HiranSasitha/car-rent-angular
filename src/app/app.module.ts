@@ -23,6 +23,10 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from './component/auth/auth.guard';
 import { AuthInterceptor } from './component/auth/auth.interceptor';
+import { CustomerComponent } from './component/customer/customer.component';
+import { CustomerDetailsComponent } from './component/customer-details/customer-details.component';
+import { AddNewCustomerComponent } from './component/add-new-customer/add-new-customer.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 
@@ -36,7 +40,10 @@ import { AuthInterceptor } from './component/auth/auth.interceptor';
     UserComponent,
     LoginComponent,
     ForbiddenComponent,
-    CarComponent
+    CarComponent,
+    CustomerComponent,
+    CustomerDetailsComponent,
+    AddNewCustomerComponent
     
   ],
   imports: [
@@ -50,7 +57,8 @@ import { AuthInterceptor } from './component/auth/auth.interceptor';
     MatListModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    SweetAlert2Module
     
   ],
   providers: [
