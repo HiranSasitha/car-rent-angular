@@ -10,6 +10,7 @@ import { AuthGuard } from './component/auth/auth.guard';
 import { CustomerComponent } from './component/customer/customer.component';
 import { CustomerDetailsComponent } from './component/customer-details/customer-details.component';
 import { AddNewCustomerComponent } from './component/add-new-customer/add-new-customer.component';
+import { CustomerMaterialComponent } from './component/customer-material/customer-material.component';
 
 const routes: Routes = [
   {path:"car",component:CarComponent},
@@ -18,7 +19,7 @@ const routes: Routes = [
   {path:"user",component:UserComponent,canActivate:[AuthGuard],data:{roles:['ROLE_USER']}},
   {path:"login",component:LoginComponent},
   {path:"forbidden",component:ForbiddenComponent},
-  {path:"customer", component:CustomerComponent,canActivate:[AuthGuard],data:{roles:['ROLE_ADMIN']}},
+  {path:"customer", component:CustomerMaterialComponent,canActivate:[AuthGuard],data:{roles:['ROLE_ADMIN']}},
   {path:'details/:id', component:CustomerDetailsComponent,canActivate:[AuthGuard],data:{roles:['ROLE_ADMIN']}},
   {path:'add-new-customer', component:AddNewCustomerComponent,canActivate:[AuthGuard],data:{roles:['ROLE_ADMIN']}}
 

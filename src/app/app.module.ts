@@ -26,7 +26,13 @@ import { AuthInterceptor } from './component/auth/auth.interceptor';
 import { CustomerComponent } from './component/customer/customer.component';
 import { CustomerDetailsComponent } from './component/customer-details/customer-details.component';
 import { AddNewCustomerComponent } from './component/add-new-customer/add-new-customer.component';
-import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { CustomerMaterialComponent } from './component/customer-material/customer-material.component';
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { A11yModule } from '@angular/cdk/a11y';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+
 
 
 
@@ -43,7 +49,9 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     CarComponent,
     CustomerComponent,
     CustomerDetailsComponent,
-    AddNewCustomerComponent
+    AddNewCustomerComponent,
+    CustomerMaterialComponent,
+    
     
   ],
   imports: [
@@ -58,7 +66,11 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     FormsModule,
     HttpClientModule,
     RouterModule,
-    SweetAlert2Module
+    MatTableModule,
+    MatSortModule,
+    A11yModule,
+    MatPaginatorModule
+   
     
   ],
   providers: [
