@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HeaderComponent } from './component/header/header.component';
-import {MatToolbarModule} from '@angular/material/toolbar'; 
+import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIcon, MatIconModule} from "@angular/material/icon";
 
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -31,6 +31,23 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { A11yModule } from '@angular/cdk/a11y';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { TestComponent } from './component/test/test.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { ColorSketchModule } from 'ngx-color/sketch';
+import {ColorAlphaModule} from "ngx-color/alpha";
+import {ColorBlockModule} from "ngx-color/block";
+import {ColorChromeModule} from "ngx-color/chrome";
+import {ColorCircleModule} from "ngx-color/circle";
+import {ColorCompactModule} from "ngx-color/compact";
+import {ColorGithubModule} from "ngx-color/github";
+import {ColorHueModule} from "ngx-color/hue";
+import {ColorMaterialModule} from "ngx-color/material";
+import {ColorPhotoshopModule} from "ngx-color/photoshop";
+import {ColorSliderModule} from "ngx-color/slider";
+import {ColorSwatchesModule} from "ngx-color/swatches";
+import {ColorTwitterModule} from "ngx-color/twitter";
+import {ColorShadeModule} from "ngx-color/shade";
+import { ColorPickerModule } from 'ngx-color-picker';
 
 
 
@@ -51,8 +68,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CustomerDetailsComponent,
     AddNewCustomerComponent,
     CustomerMaterialComponent,
-    
-    
+    TestComponent,
+
+
+
   ],
   imports: [
     BrowserModule,
@@ -69,9 +88,25 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatTableModule,
     MatSortModule,
     A11yModule,
-    MatPaginatorModule
-   
-    
+    MatPaginatorModule,
+    AngularEditorModule,
+    ColorSketchModule,
+    ColorAlphaModule,
+    ColorBlockModule,
+    ColorChromeModule,
+    ColorCircleModule,
+    ColorCompactModule,
+    ColorGithubModule,
+    ColorHueModule,
+    ColorMaterialModule,
+    ColorPhotoshopModule,
+    ColorSliderModule,
+    ColorSwatchesModule,
+    ColorTwitterModule,
+    ColorShadeModule,
+    ColorPickerModule
+
+
   ],
   providers: [
     AuthGuard,

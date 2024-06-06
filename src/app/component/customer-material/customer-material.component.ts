@@ -25,26 +25,26 @@ export class CustomerMaterialComponent implements OnInit {
   dataSource = new MatTableDataSource(this.customers);
 
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  // @ViewChild(MatPaginator) paginator!: MatPaginator;
 
 
   constructor(private _liveAnnouncer: LiveAnnouncer,private customerService:CustomerService) {}
   ngOnInit(): void {
-    
+
     this.getAllCustomer();
-  
+
   }
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-   
+   // this.dataSource.paginator = this.paginator;
+
   }
 
   getAllCustomer():void{
     this.customerService.getAllCustomer().subscribe(
       (response:any)=>{
-       
+
         this.customers=response;
        this.dataSource.data=this.customers;
       }
