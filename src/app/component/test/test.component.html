@@ -1,0 +1,30 @@
+<!--<p>test works!</p>-->
+<!--<angular-editor [placeholder]="'Enter text here...'"  [(ngModel)]="htmlContent" [config]="config"></angular-editor>-->
+<!--<h1>Hiran</h1>-->
+
+<!--<h2>{{htmlContent}}</h2>-->
+<!--<color-sketch [color]="state" (onChangeComplete)="handleChange($event)"></color-sketch>-->
+<!--<color-alpha-picker [color]="state" (onChangeComplete)="handleChange($event)"></color-alpha-picker>-->
+<!--<color-block></color-block>-->
+<!--<color-chrome [color]="state" (onChangeComplete)="handleChange($event)"></color-chrome>       //good-->
+<!--<color-circle></color-circle>-->
+<!--<color-compact></color-compact>-->
+<!--<color-github></color-github>-->
+<!--<color-hue-picker></color-hue-picker>-->
+<!--<color-material></color-material>-->
+<!--<color-photoshop></color-photoshop>-->
+<!--<color-sketch></color-sketch>-->
+<!--<color-slider [color]="state" (onChangeComplete)="handleChange($event)"></color-slider>-->
+<!--<color-swatches></color-swatches>-->
+<!--<color-twitter></color-twitter>-->
+<!--<color-shade-picker></color-shade-picker>-->
+<!--<input [(colorPicker)]="state" [style.background]="state"/>-->
+<div>
+  <button (click)="toggleColorPicker()">Toggle Color Picker</button>
+  <button (click)="toggleDisableColorPicker()">Toggle Disable Color Picker</button>
+  <button (click)="changeColorMode()">Toggle Color Mode</button>
+  <input [disabled]="true"[(colorPicker)]="state" [style.background]="state" [style.border-radius]="'10px'" [cpWidth]="'100px'" [(cpToggle)]="toggle" [cpDisabled]="isDisabled" />
+  <p>Selected color: {{ state }}</p>
+</div>
+<p>Selected color: {{ state }}</p>
+
